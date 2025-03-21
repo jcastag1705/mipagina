@@ -34,9 +34,9 @@
                 console.error('Error al acceder a la cámara trasera:', error);
             });
 
-        // Cargar el modelo MobileNet
+        // Cargar el modelo MobileNet a través de TensorFlow.js
         let model;
-        mobilenet.load().then(mobilenetModel => {
+        tf.loadLayersModel('https://tfhub.dev/google/tfjs-model/mobilenet_v2_1.0_224/classification/3/default/1').then(mobilenetModel => {
             model = mobilenetModel;
             console.log('Modelo MobileNet cargado');
         });
